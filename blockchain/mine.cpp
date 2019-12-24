@@ -4,11 +4,11 @@
 int main() {
 
   // instantiate chain
-  Chain* c = new Chain(5);
+  Chain* c = new Chain(3);
   std::cout << "Initial block mined. Hash: " << c->getCurrentBlock()->getHash().substr(0, 10) << "\n";
 
   // mine a few blocks
-  for (int i = 0; i < 5; i++) {
+  while (true) {
     c->addBlock();
     std::cout << "Block " << c->getCurrentBlock()->getIndex() << " mined. Hash: " << c->getCurrentBlock()->getHash().substr(0, 10) << "\n";
   }
